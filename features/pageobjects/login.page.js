@@ -26,12 +26,20 @@ class LoginPage extends Page {
     get buttonLogin() {
         return $('button#SubmitLogin')
     }
+
+    get myAccount() {
+        return $('.navigation_page');
+    }
     
     async login ({email, password} = {}) {
         await expect(this.form).toBeExisting();
         await this.registerEmail.setValue(email);
         await this.registerPassword.setValue(password);
-        await this.submitAccount.click();
+        await this.buttonLogin.click();
+    }
+
+    async success () {
+        await expect(this.myAccount).toHaveTextContaining('My account');
     }
 
     open () {

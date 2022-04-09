@@ -18,7 +18,11 @@ When(/^I register$/, async () => {
 });
 
 When(/^I login$/, async () => {
-    await LoginPage.login({email: 'ang@email.com', password: 12345});
+    await LoginPage.login({email: 'ang@email.com', password: 123456});
+});
+
+Then(/^I should see my account$/, async () => {
+    await LoginPage.success();
 });
 
 Then(/^I should see form create account$/, async () => {
@@ -34,7 +38,5 @@ Then(/^I should see form create account$/, async () => {
         phone: '083829292929',
         alias: 'Home',
     });
-    
-    
 });
 

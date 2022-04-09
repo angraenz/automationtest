@@ -4,3 +4,4 @@ Feature: Automationpractice register
 
     Given I am on the login page
     When I login
+    Then I should see my account
